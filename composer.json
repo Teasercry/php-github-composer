@@ -1,0 +1,16 @@
+{
+    "name": "renan/01-composer",
+    "description": "Projeto inicial para utilização do composer",
+    "type": "studies",
+    "autoload": {
+        "psr-4": {
+            "Renan\\01Composer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Renan G Silva"
+        }
+    ],
+    "require": {}
+}
