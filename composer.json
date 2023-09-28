@@ -12,5 +12,7 @@
             "name": "Renan G Silva"
         }
     ],
-    "require": {}
+    "require": {
+        "guzzlehttp/guzzle": "^7.8"
+    }
 }
