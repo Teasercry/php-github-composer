@@ -21,14 +21,24 @@ class GitHub {
      */
     private $baseUri = 'https://api.github.com';
 
-    public function __construct(string $baseUri) {
+    public function __construct(string $baseUri = 'https://api.github.com') {
         $this->baseUri = $baseUri;
         $this->httpClient = new Client(['base_uri' => $this->baseUri]);
     }
 
-    public function get(string $endpoint, string $type = "GET"): string {
-        $res = $this->httpClient->request($type, $endpoint);
-        return json_decode($res->getBody());
+    public function get(string $endpoint, string $type = "GET"): object | null {
+        $return = (object)null;
+        Log::info('New request >> get');
+        try {
+            $res = $this->httpClient->request($type, $endpoint);
+            $return->body = $res->getBody();
+            $return->header = $res->getHeaders();
+            $return->statusCode = $res->getStatusCode();
+            Log::info('Request >> get SUCCESS');
+        } catch (\Throwable $th) {
+            $return->error = $th;
+        }
+        return $return;
     }
 
     public function getUsers(int $perPage = 30) {
