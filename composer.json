@@ -3,8 +3,15 @@
     "description": "Projeto inicial para utilização do composer",
     "type": "studies",
     "autoload": {
+        "classmap": [
+            "src/LogApplication.php"
+        ],
+        "files": [
+            "src/Helpers/functions.php"
+        ],
         "psr-4": {
-            "Renan\\01Composer\\": "src/"
+            "Renan\\01Composer\\": "src/",
+            "App\\": "src/"
         }
     },
     "authors": [
@@ -16,5 +23,10 @@
         "guzzlehttp/guzzle": "^7.8",
         "symfony/dom-crawler": "^4.2",
         "symfony/css-selector": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10",
+        "squizlabs/php_codesniffer": "^3.7",
+        "phan/phan": "^5.4"
     }
 }
