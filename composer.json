@@ -1,5 +1,5 @@
 {
-    "name": "renanzitos/01-composer",
+    "name": "renanzitos/composer-with-github",
     "description": "Projeto inicial para utilização do composer",
     "type": "studies",
     "autoload": {
